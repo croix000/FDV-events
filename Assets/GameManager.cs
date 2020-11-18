@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject doorGo;
     private Player player;
-    int coinsNeeded = 3;
+    int coinsNeeded = 16;
 
     private void Start()
     {
