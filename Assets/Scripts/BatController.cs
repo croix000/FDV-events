@@ -30,16 +30,15 @@ public class BatController : MonoBehaviour
 
         while (true)
         { //variable that enables you to kill routine
-            Debug.Log("OnCoroutine: " + Time.time);
+          //  Debug.Log("OnCoroutine: " + Time.time);
             CalculateCollision();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
     void CalculateCollision() {
        
-        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f  )
-        {
+      
             Vector3 hitSize = Vector3.one * 0.5f;
             if (moveType.Equals(MoveType.Horizontal))
             {
@@ -71,6 +70,6 @@ public class BatController : MonoBehaviour
             }
 
 
-        }
+        
     }
 }

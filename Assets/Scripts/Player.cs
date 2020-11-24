@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
 
     public delegate void CoinCollected();
     public event CoinCollected onCoinCollected;
-
+    public delegate void DiamondCollected();
+    public event DiamondCollected onDiamondCollected;
     void Start()
     {
 
@@ -87,6 +88,12 @@ public class Player : MonoBehaviour
     public void CoinCollision() {
 
         onCoinCollected();
+    }
+
+    public void DiamondCollision()
+    {
+
+        onDiamondCollected();
     }
 
 }

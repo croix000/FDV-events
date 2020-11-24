@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<Player>();
         player.onCoinCollected += ReduceCoinsNeeded;
+        player.onDiamondCollected += Win;
     }
 
     void ReduceCoinsNeeded()
@@ -22,5 +24,8 @@ public class GameManager : MonoBehaviour
             GameObject.Destroy(doorGo.gameObject);
 
     }
+    void Win() {
 
+        SceneManager.LoadScene("Menu");
+    }
 }
